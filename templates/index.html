@@ -8,15 +8,16 @@
     <title>Baixar Youtube</title>
 </head>
 <body>
-    <h1>
-        Bem vindo
-    </h1>
-    
-    <form action="{{ url_for("page_home")}}" method="post">
-        <label for="link_video">Insira o link do vídeo: </label>
-        <input type="text" id="link_video" name="l_video" placeholder="Link">
-        <button type="submit">Login</button>
-    </form>
-
+    <div id="container">
+        <p>
+            Bem vindo
+        </p>
+        
+        <form action="{{ url_for("page_home")}}" method="post">
+            <label for="link_video">Insira o link do vídeo: </label>
+            <input type="text" id="link_video" name="l_video" placeholder="Link">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
