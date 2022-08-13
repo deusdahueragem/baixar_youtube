@@ -5,19 +5,16 @@ from pytube import YouTube, streams
 app = Flask(__name__)
 
 @app.route('/', methods =["GET", "POST"])
+
 def page_home():
     if request.method =="POST":
-
-        first_name = request.form.get("fname")
-        last_name = request.form.get("lname")
-
-        video = YouTube(first_name)
+        link_video = request.form.get("l_video")
+        video = YouTube(link_video)
         stream = video.streams.get_highest_resolution()
-        stream.download(output_path='../static')
+        stream.download(output_path='./video')
         print ("Waiting Download")
-        return "Seu nome é "+first_name + last_name
+        return render_template("video_download.html")
     return render_template("index.html")
 
 if __name__ == '__main__':
     app.run()
-
